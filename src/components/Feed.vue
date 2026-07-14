@@ -193,8 +193,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { db, auth } from '../firebase/firebase'
 import router from '@/router';
 import { collection, getDocs } from "firebase/firestore";
-// import pinia from "../stores/store";
-// import { useCounterStore } from "../stores/counter";
+import { useCounterStore } from "../stores/counter";
 
 
 // const stores = useCounterStore(pinia);
@@ -209,7 +208,7 @@ export default defineComponent({
       search: '',
       tab: null,
       dialog: false,
-      posts: []
+      posts: [] as any []
     };
   },
 

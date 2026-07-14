@@ -132,7 +132,7 @@
 <script lang="ts">
 import { useRouter } from 'vue-router';
 import { getAuth, signOut } from "firebase/auth";
-import { db, auth, storage } from '../firebase/firebase'
+import { db, auth } from '../firebase/firebase'
 import router from '@/router';
 import { collection, addDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -171,7 +171,7 @@ export default {
       date: '',
       subtitle: '',
       time: '',
-      image: null,
+      image: null as string | null,
       disablePublish:true,
     };
   },
@@ -195,8 +195,10 @@ export default {
 
     },
 
-    async handleImageUpload(event) {
+    async handleImageUpload(event: any) {
       const file = event.target.files[0];
+      if (!file) return;
+
       const storageRef = ref(storage, file.name);
 
       uploadBytes(storageRef, file).then((snapshot) => {
