@@ -1,5 +1,9 @@
 # Moment-project
 
+Status: Actively Maintained
+
+This project was originally established in 2023. Recent commits reflect ongoing feature updates, refactoring, and modernizations to keep the codebase aligned with current industry standards.
+
 The Moment project is all about a blog site where you choose to be either a Reader or Writer. You can read posts that intrest your liking and same goes for writing, you can write posts and  publish for others to see.
 
 #STEPS TO GOING ABOUT MOMENT 
